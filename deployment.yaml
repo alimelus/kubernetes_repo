@@ -19,3 +19,8 @@ spec:
         image: nginx:latest
         ports:
         - containerPort: 80
+      initContainers:
+      - name: init-myservice
+        image: busybox:1.28  
+        command: ['sh', '-c', 'echo The app is running! && sleep 3600']
+      
